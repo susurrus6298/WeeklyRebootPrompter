@@ -1,0 +1,10 @@
+Deploy the .intunewin file (win32 app) via Intune. Install in user context.
+Use the presence of "C:\Windows\System32\Tasks\Weekly Reboot Prompt" as the detection rule.
+Modify the prompt message in userReboot.ps1 if desired. Take away the Cancel button if you like.
+Deploys via creating a scheduled task that runs as the current user (app was installed in
+the user context), prompts the user to reboot, and bugs them each day that they have not
+yet rebooted. Time is set as weekly by way of the calculation found in userReboot.ps1 which runs
+daily at 3pm within the user's timezone. Obviously, if you modify the scripts then you must
+recreate the .intunewin file using the appropriate Microsoft win32 app creation tool.
+
+Provided as-is with no support or guarantees.
